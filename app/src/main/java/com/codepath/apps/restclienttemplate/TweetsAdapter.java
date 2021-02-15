@@ -66,22 +66,22 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivProfileImage;
-        TextView tvScreenName;
         TextView tvUserName;
+        TextView tvName;
         TextView tvBody;
         TextView tvCreatedAt;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
-            tvScreenName = itemView.findViewById(R.id.tvScreenName);
-            tvUserName = itemView.findViewById(R.id.tvUserName);
+            tvUserName = itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvName);
             tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt);
             tvBody = itemView.findViewById(R.id.tvBody);
         }
 
         public void bind(Tweet tweet) {
-            tvScreenName.setText("@" + tweet.user.screenName);
+            tvUserName.setText("@" + tweet.user.userName);
             tvUserName.setText(tweet.user.name);
             tvCreatedAt.setText(tweet.getFormattedTimestamp());
             tvBody.setText(tweet.body);
